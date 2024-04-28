@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Prototype</title>
+    </head>
+    <body>
+        <h1>Prototype</h1>
+        
+        <script>
+            // Prototype is used to add a property in a constructor.
+            // Syntax : class_name.prototype.key = value;
+            
+            function Biscuits(name, flavour, price, n){
+                this.name = name;
+                this.flavour = flavour;
+                this.price = price;
+                this.num = n;
+            }
+            
+            hh = new Biscuits('Happy Happy', 'Chocolate', 5, 7);
+            Biscuits.prototype.no_of_bisc = hh.num;
+            
+            for(var p in hh){
+                document.write(hh[p] + '<br>');
+            }
+        </script>
+    </body>
+</html>

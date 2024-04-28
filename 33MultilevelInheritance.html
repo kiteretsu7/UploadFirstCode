@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title>Multilevel inheritance</title>
+	</head>
+	<body>
+		<h1>Multilevel Inheritance</h1>
+		<hr>
+		
+		<p>
+			Multilevel Inheritance means to inherit a class in multiple classes.
+		</p>
+		
+		<script>
+			function Rajma(){
+				this.rajma = "300 gm";
+				this.water = "1 liter";
+				this.salt = "2 spoon";
+				this.garamMasala = "5 spoon";
+				this.rajmaIng = function(){
+					document.write("Ingredients needed to cook Rajma : " + "<br>");
+					document.write("Rajma : " + this.rajma + "<br>");
+					document.write("Water : " + this.water + "<br>");
+					document.write("Salt : " + this.salt + "<br>");
+					document.write("Garam Masala : " + this.garamMasala);
+				};
+			}
+			
+			function Rice(){
+				this.rice = "400 gm";
+				this.water = "1.5 liter";
+				this.riceIng = function(){
+					document.write("Ingredients needed to cook Rice : " + "<br>");
+					document.write("Rice : " + this.rice + "<br>");
+					document.write("Water : " + this.water + "<br>");
+				};
+			}
+			
+			function Roti(){
+				this.wheat = "400 gm";
+				this.water = "100 ml";
+				this.rotiIng = function(){
+					document.write("Ingredients needed to cook Roti : " + "<br>");
+					document.write("Wheat : " + this.wheat + "<br>");
+					document.write("Water : " + this.water + "<br>");
+				};
+			}
+			
+			function RajmaRice(){
+				Rajma.call(this);
+				Rice.call(this);
+			}
+			
+			function RajmaRoti(){
+				Rajma.call(this);
+				Roti.call(this);
+			}
+			
+			var rajmarice = new RajmaRice();
+			var rajmaroti = new RajmaRoti();
+			
+			document.write("<b>Ingredients needed to cook Rajma Rice : </b><br>");
+			rajmarice.rajmaIng();
+			document.write("<br><br>");
+			rajmarice.riceIng();
+			document.write("<br>");
+			
+			document.write("<br><b>Ingredients needed to cook Rajma Roti : </b><br>");
+			rajmaroti.rajmaIng();
+			document.write("<br><br>");
+			rajmaroti.rotiIng();
+		</script>
+	</body>
+</html>
